@@ -17,8 +17,8 @@ elseif mode=="USRP 真机收发"
     if isfield(cfg,'CaptureDirectory') && ~isempty(cfg.CaptureDirectory)
         sourceDir=char(cfg.CaptureDirectory);
     else
-    capture=jt65_capture_frames(string(cfg.Message),FrameCount=1,SpeedMode=speedMode,Serial=string(cfg.Serial), ...
-        CenterFrequency=cfg.CenterMHz*1e6,TxGain=cfg.TxGain,RxGain=cfg.RxGain);
+    capture=jt65_cli_capture('Message',string(cfg.Message),'FrameCount',1,'SpeedMode',speedMode,'Serial',string(cfg.Serial), ...
+        'CenterFrequency',cfg.CenterMHz*1e6,'TxGain',cfg.TxGain,'RxGain',cfg.RxGain);
     sourceDir=capture.captures(1).directory;
     end
 else
