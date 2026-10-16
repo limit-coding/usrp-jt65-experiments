@@ -1,0 +1,7 @@
+# 实验数据（原始 IQ / .mat 录制），不入库
+data/
+# Python 缓存与系统文件
+__pycache__/
+*.pyc
+.DS_Store
+*.asv
